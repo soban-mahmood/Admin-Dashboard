@@ -257,8 +257,8 @@ function BlogManagement() {
             </li>
           </ul>
         </div>
-        <div className="flex-1 bg-gray-800 p-4 text-white">
-          <h1 className="text-xl font-bold mb-4">Blog Management</h1>
+        <div className="flex-1 bg-gray-800 p-4 text-white mt-2">
+          <h1 className="text-xl font-bold mb-4 ">Blog Management</h1>
           <div className="flex flex-col md:flex-row justify-between items-center mb-4">
             <div className="flex items-center mb-4 md:mb-0">
               <input
@@ -278,14 +278,14 @@ function BlogManagement() {
                 <option value="oldest">Oldest</option>
               </select>
               <button className="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md ml-2">
-                Add Blog +
+                Add Blog 
               </button>
             </div>
           </div>
           <div className="overflow-x-auto">
             <table className="table-auto w-full text-left">
               <thead>
-                <tr className="border rounded">
+                <tr className="border rounded sm:hidden ">
                   <th className="px-4 py-2">Blog Title</th>
                   <th className="px-4 py-2">Author Name</th>
                   <th className="px-4 py-2">Date Of Upload</th>
@@ -294,7 +294,7 @@ function BlogManagement() {
                   <th className="px-4 py-2">Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="sm:hidden">
                 {filteredBlogs.map((blog) => (
                   <tr key={blog.title}>
                     <td className="border px-4 py-2">
@@ -306,7 +306,7 @@ function BlogManagement() {
                     <td className="border px-4 py-2">{blog.comments}</td>
                     <td className="border px-4 py-2">
                       {blog.status === "approved" ? (
-                        <div className="bg-red-500 rounded-full w-[20px] h-[20px] text-white"></div>
+                        <div className="bg-red-500 rounded-full w-[20px] h-[20px] sm:h-[10px] text-white"></div>
                       ) : (
                         <div className="bg-red-500 rounded-full w-[20px] h-[20px] text-white"></div>
                       )}
